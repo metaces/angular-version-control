@@ -10,9 +10,9 @@
     "release": "standard-version",
     "release:check": "git diff --exit-code || (echo 'Uncommitted changes found. Please commit or stash them before running the release.' && exit 1)",
     "release:branch-check": "branch=$(git symbolic-ref --short HEAD) && [[ \"$branch\" == \"master\" || \"$branch\" == \"develop\" ]] || (echo 'Releases are only allowed on master or develop branches.' && exit 1)",
-    "release:patch": "npm run release:check && npm run release:branch-check && standard-version --release-as patch && git add . && git commit -m 'chore(release): bump version to $(node -p -e \"require('./package.json').version\")' && git push --follow-tags origin $(git symbolic-ref --short HEAD)",
-    "release:minor": "npm run release:check && npm run release:branch-check && standard-version --release-as minor && git add . && git commit -m 'chore(release): bump version to $(node -p -e \"require('./package.json').version\")' && git push --follow-tags origin $(git symbolic-ref --short HEAD)",
-    "release:major": "npm run release:check && npm run release:branch-check && standard-version --release-as major && git add . && git commit -m 'chore(release): bump version to $(node -p -e \"require('./package.json').version\")' && git push --follow-tags origin $(git symbolic-ref --short HEAD)",
+    "release:patch": "npm run release:check && npm run release:branch-check && standard-version --release-as patch && git add CHANGELOG.md package.json && git commit -m 'chore(release): bump version to $(node -p -e \"require('./package.json').version\")' && git push --follow-tags origin $(git symbolic-ref --short HEAD)",
+    "release:minor": "npm run release:check && npm run release:branch-check && standard-version --release-as minor && git add CHANGELOG.md package.json && git commit -m 'chore(release): bump version to $(node -p -e \"require('./package.json').version\")' && git push --follow-tags origin $(git symbolic-ref --short HEAD)",
+    "release:major": "npm run release:check && npm run release:branch-check && standard-version --release-as major && git add CHANGELOG.md package.json && git commit -m 'chore(release): bump version to $(node -p -e \"require('./package.json').version\")' && git push --follow-tags origin $(git symbolic-ref --short HEAD)",
     "commit-push": "npm run release:check && git add . && git commit -m 'chore: save work in progress' && git push origin $(git symbolic-ref --short HEAD)"
   },
   "standard-version": {
