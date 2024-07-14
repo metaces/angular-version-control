@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.2](https://github.com/metaces/angular-version-control/compare/v0.0.1...v0.0.2) (2024-07-14)
+
+
+### Features
+
+* add changelog to be commited ([ad23825](https://github.com/metaces/angular-version-control/commit/ad238259ce0217150ffe5505ca043c8c67d070d5))
+
 ### 0.0.1 (2024-07-14)
 
 
